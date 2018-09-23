@@ -1,7 +1,7 @@
 const appName = 'expenses';
 const version = '2';
 
-const expectedCaches = [`{appName}-static-${version}`];
+const expectedCaches = [`${appName}-static-${version}`];
 
 self.addEventListener('install', event => {
   event.waitUntil(
