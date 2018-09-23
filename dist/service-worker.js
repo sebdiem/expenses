@@ -1,5 +1,5 @@
 const appName = 'expenses';
-const version = '4j';
+const version = '5';
 
 const expectedCaches = [`${appName}-static-${version}`];
 
