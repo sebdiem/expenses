@@ -14,6 +14,21 @@ self.addEventListener('install', event => {
   );
 });
 
+self.addEventListener('activate', event => {
+  // delete any caches that aren't in expectedCaches
+  event.waitUntil(
+    caches.keys().then(keys => Promise.all(
+      keys.map(key => {
+        if (!expectedCaches.includes(key)) {
+          return caches.delete(key);
+        }
+      })
+    )).then(() => {
+      console.log('caches cleared');
+    })
+  );
+});
+
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
