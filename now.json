@@ -12,7 +12,7 @@
         "source": "index.html",
         "headers": [{
           "key": "Cache-Control",
-          "value": "public, max-age=10, s-maxage=10, no-cache"
+          "value": "s-maxage=10"
         }]
       }
     ],
