@@ -1,1 +1,21 @@
-{}
+{
+  "static": {
+    "headers": [
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|js|css)",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "max-age=31536000"
+        }]
+      },
+      {
+        "source": "index.html",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }]
+      }
+    ],
+    "public": "dist"
+  }
+}
