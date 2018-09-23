@@ -20,6 +20,7 @@ self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys => Promise.all(
       keys.map(key => {
+        console.log(expectedCaches, key)
         if (!expectedCaches.includes(key)) {
           console.log("deleting cache", key);
           return caches.delete(key);
