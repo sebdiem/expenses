@@ -1,9 +1,17 @@
 <html>
   <head>
-    <style src="./app.css"></style>
+    <link rel="stylesheet" type="text/css" href="./app.css"/>
     <script src="./app.js"></script>
   </head>
   <body>
-    <p>Hello world 3</p>
+    <p>Hello world 4</p>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js');
+          console.log('service worker registered')
+        });
+      }
+    </script>
   </body>
 </html>
