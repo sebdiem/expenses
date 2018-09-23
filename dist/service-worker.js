@@ -6,6 +6,7 @@ const expectedCaches = [`{appName}-static-${version}`];
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(`${appName}-static-${version}`)
+      console.log("creating cache", `${appName}-static-${version}`)
       .then(cache => cache.addAll([
         '/',
         '/app.js',
@@ -20,6 +21,7 @@ self.addEventListener('activate', event => {
     caches.keys().then(keys => Promise.all(
       keys.map(key => {
         if (!expectedCaches.includes(key)) {
+          console.log("deleting cache", key)
           return caches.delete(key);
         }
       })
