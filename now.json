@@ -1,1 +1,29 @@
-{}
+{
+  "static": {
+    "headers": [
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|js|css)",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "max-age=31536000, s-maxage=31536000"
+        }]
+      },
+      {
+        "source": "index.html",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "s-maxage=10"
+        }]
+      },
+      {
+        "source": "service-worker.js",
+        "headers": [{
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }]
+      }
+    ],
+    "public": "dist"
+  },
+  "alias": "sebdiem.now.sh"
+}
