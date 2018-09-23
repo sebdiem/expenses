@@ -1,5 +1,5 @@
 const appName = 'expenses';
-const version = '2';
+const version = '4i';
 
 const expectedCaches = [`${appName}-static-${version}`];
 
@@ -8,8 +8,8 @@ self.addEventListener('install', event => {
     caches.open(`${appName}-static-${version}`)
       .then(cache => cache.addAll([
         '/',
-        '/app.js',
-        '/app.css'
+        '/app.js',  // needs a hash, because cached
+        '/app.css'  // needs a hash, because cached
       ]))
   );
   console.log("creating cache", `${appName}-static-${version}`);
