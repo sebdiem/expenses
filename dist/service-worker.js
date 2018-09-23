@@ -1,15 +1,16 @@
 const appName = 'expenses';
-const version = '4i';
+const version = '4j';
 
 const expectedCaches = [`${appName}-static-${version}`];
 
 self.addEventListener('install', event => {
+  self.skipWaiting(); // enable page update on refresh (instead of closing reopening tab)
   event.waitUntil(
     caches.open(`${appName}-static-${version}`)
       .then(cache => cache.addAll([
         '/',
-        '/app.js',  // needs a hash, because cached
-        '/app.css'  // needs a hash, because cached
+        '/app.js', // needs a hash, because cached
+        '/app.css' // needs a hash, because cached
       ]))
   );
   console.log("creating cache", `${appName}-static-${version}`);
