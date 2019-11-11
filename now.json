@@ -14,13 +14,6 @@
           "key": "Cache-Control",
           "value": "s-maxage=10"
         }]
-      },
-      {
-        "source": "service-worker.js",
-        "headers": [{
-          "key": "Cache-Control",
-          "value": "no-cache"
-        }]
       }
     ],
     "public": "dist"
