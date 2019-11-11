@@ -130,7 +130,6 @@ function handleAuthClick(event) {
  *  Sign out the user upon button click.
  */
 function handleSignoutClick(event) {
-  console.log("hum");
   gapi.auth2.getAuthInstance().signOut();
 }
 
